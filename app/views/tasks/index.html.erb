@@ -1,9 +1,14 @@
 <% @tasks.each do |task| %>
   <h2>Title: <%= task.title %></h2>
   <p><%= task.details %></p>
-  <p><%= link_to "Details", banana_path(task)%></p>
+  <p>
+    <%= link_to "Details", task_path(task) %> |
+    <%= link_to "Edit Task", edit_task_path(task) %> |
+    <%= link_to "Delete Task", delete_task_path(task), method: :delete %>
+
+  </p>
 <% end %>
 
-  <p><%= link_to "Add Task", tasks_new_path %></p>
+  <p><%= link_to "Add Task", new_task_path %></p>
 
 
